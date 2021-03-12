@@ -1,19 +1,24 @@
-function openNav() {
-  document.getElementById("sideNav").style.width = "50%";
-  document.querySelector(".main-overlay").classList.add("main-overlay-active");
-}
-
-function closeNav() {
-  document.getElementById("sideNav").style.width = "0%";
-  document
-    .querySelector(".main-overlay")
-    .classList.remove("main-overlay-active");
-  console.log("clicked");
+document
+  .querySelector(".sidebarToggle")
+  .addEventListener("click", toogleSidebar);
+function toogleSidebar() {
+  const sideNav = document.getElementById("sideNav");
+  const overlay = document.querySelector(".main-overlay");
+  const opened = sideNav.classList.contains("sidebar-open");
+  if (opened) {
+    sideNav.classList.remove("sidebar-open");
+    overlay.classList.remove("main-overlay-active");
+  } else {
+    sideNav.classList.add("sidebar-open");
+    overlay.classList.add("main-overlay-active");
+  }
 }
 
 document.getElementById("main").addEventListener("click", function () {
-  document.getElementById("sideNav").style.width = "0%";
-  closeNav();
+  const sideNav = document.getElementById("sideNav");
+  const overlay = document.querySelector(".main-overlay");
+  sideNav.classList.remove("sidebar-open");
+  overlay.classList.remove("main-overlay-active");
 });
 
 // side bar collapse functionality
@@ -26,18 +31,25 @@ dropdown.forEach((e, i) => {
     );
     sideCollapceContent.forEach((content) => {
       let contentId = content.getAttribute("id");
-      var existingStyle = content.getAttribute("style");
-      if (existingStyle !== null && String(existingStyle).includes("block")) {
+      // var existingStyle = content.getAttribute("style");
+
+      var existingClass = content.classList;
+
+      if (content.classList.contains("opened")) {
         if (target === contentId) {
-          content.style.display = "none";
+          content.classList.remove("opened");
+          content.classList.add("closed");
         } else {
-          content.style.display = "none";
+          content.classList.remove("opened");
+          content.classList.add("closed");
         }
       } else {
         if (target === contentId) {
-          content.style.display = "block";                                                           
+          content.classList.add("opened");
+          content.classList.remove("closed");
         } else {
-          content.style.display = "none";
+          content.classList.remove("opened");
+          content.classList.add("closed");
         }
       }
     });

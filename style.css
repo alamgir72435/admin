@@ -115,15 +115,20 @@ ul li a:hover {
 }
 .overlay {
   margin-top: 40px;
-  width: 0;
+  width: 50%;
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -50%;
   background-color: #fff;
   overflow-x: hidden;
   transition: 0.4s;
 }
+
+.sidebar-open {
+  left: 0%;
+}
+
 .overlay-content {
   position: relative;
   width: 100%;
@@ -148,7 +153,7 @@ ul li a:hover {
   opacity: 0.6;
   filter: blur(2px);
   position: absolute;
-  transition: 0.5s;
+  transition: all 0.3s ease-in-out;
 }
 
 .mobile-menu {
@@ -180,7 +185,7 @@ ul li a:hover {
 }
 .side-collapse-content {
   display: none;
-  background-color: #daf6ff; 
+  background-color: #daf6ff;
 }
 .side-collapse-content a {
   font-size: 16px;
@@ -220,6 +225,17 @@ ul li a:hover {
   margin-right: 8px;
   color: #000 !important;
   margin: 13px 0px;
+}
+
+/* // Sidebar item collapse css  */
+
+.opened {
+  display: block;
+  transition: all 1s ease-in-out;
+}
+.closed {
+  display: none;
+  transition: all 1s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
