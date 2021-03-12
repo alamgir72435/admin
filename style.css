@@ -16,6 +16,7 @@ body {
 }
 main {
   height: 90vh;
+  text-align: justify;
 }
 nav {
   overflow: hidden;
