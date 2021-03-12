@@ -117,19 +117,18 @@ ul li a:hover {
   cursor: pointer;
 }
 .overlay {
-  margin-top: 40px;
-  width: 50%;
+  margin-top: 50px;
+  width: 300px;
   height: 100%;
   position: fixed;
   top: 0;
-  left: -50%;
+  left: -300px;
   background-color: #fff;
-  overflow-x: hidden;
-  transition: 0.4s;
+  transition: all 0.2s ease-in-out;
 }
 
 .sidebar-open {
-  left: 0%;
+  left: 0;
 }
 
 .overlay-content {
@@ -157,6 +156,7 @@ ul li a:hover {
   filter: blur(2px);
   position: absolute;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .mobile-menu {
@@ -242,6 +242,10 @@ ul li a:hover {
 }
 
 main {
+  position: relative;
+  box-sizing: border-box;
+}
+main p {
   padding: 10px;
 }
 
