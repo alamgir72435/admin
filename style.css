@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,13 @@
   box-sizing: border-box;
 }
 .container {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
+  max-width: 1150px;
 }
 body {
-  font-family: "Newsreader", serif;
-  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.7;
 }
 main {
   height: 90vh;
@@ -28,10 +30,10 @@ ul li {
 }
 ul li a {
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 8px 20px;
   color: #fff;
   display: inline-block;
-  font-size: 18px;
+  font-size: 15px;
 }
 ul li a:hover {
   background: #f34e86;
@@ -236,6 +238,10 @@ ul li a:hover {
 .closed {
   display: none;
   transition: all 1s ease-in-out;
+}
+
+main {
+  padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
